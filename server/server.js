@@ -20,7 +20,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/cats", async (request, response) => {
-  const allCats = await Cat.find(request.query);
+  const allCats = await Cat.find(request.query); // request.query represents an empty object which is all the cats. You can pass it parameters to filter for certain cats.
   response.status(200).json(allCats);
 });
 
